@@ -25,13 +25,29 @@ export default 'mellon';
 
 2. Start the database and pgAdmin: `docker-compose --f docker-compose-dev.yml up`
 
-3. Run `npm install` and then `npm start` and gondolin will be available at `http://localhost:3000`.
+3. Run `npm install` and then `npm run start:dev` and gondolin will be available at `http://localhost:3000`.
 
+## Database access
 
-## Run via docker / docker-compose
+Connect to the PostGIS database at `localhost:5050` with pgAdmin:
+
+- Host name: `gondolin-postgis`
+- Port: 5432
+- Database: gondolin
+- Schema: gondolin
+- User: gondolin
+- Password: gondolin
+
+## Quick start guide
+
+### Run via docker-compose for production / testing
+
+First create the file `passport.ts` as described above.
+
+To quickly get a running demo of gondolin then simply run:
 
 ```
-docker build -t gondolin-server .
-
 docker-compose up
 ```
+
+After a while the *gondolin* API will be available at `localhost:3000`. The swagger documentation below describes the API endpoint.
